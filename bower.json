@@ -1,0 +1,12 @@
+{
+  "name": "gepens-utils",
+  "version": "0.0.1",
+  "main": "gepsens.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
