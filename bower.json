@@ -1,7 +1,7 @@
 {
-  "name": "gepens-utils",
+  "name": "gepsens-utils",
   "version": "0.0.1",
-  "main": "gepsens.js",
+  "main": "./gepsens.js",
   "ignore": [
     "**/.*",
     "node_modules",
