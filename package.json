@@ -1,7 +1,7 @@
 {
   "author": "https://github.com/Igosuki/gepsens-ng-utils/graphs/contributors",
   "name": "gepsens-ng-utils",
-  "version": "0.0.1-SNAPSHOT",
+  "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
