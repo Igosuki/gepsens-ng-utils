@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       js: {
         files: ['src/**/*.js'],
         //we don't need to jshint here, it slows down everything else
-        tasks: ['karma:watch:run']
+        tasks: ['karma:watch:run', 'build']
       }
     },
     concat: {

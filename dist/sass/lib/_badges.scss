@@ -1,0 +1,73 @@
+.tagsinput.noborder {
+    border: none;
+    margin-bottom: 0;
+}
+
+.tagsinput {
+    background: white;
+    border: 2px solid $brand-primary;
+    border-radius: 6px;
+    height: 100%;
+    margin-bottom: 18px;
+    padding: 6px 1px 1px 6px;
+    overflow-y: auto;
+    text-align: left;
+    input {
+        background: transparent;
+        border: none;
+        color: #34495e;
+        margin: 0px;
+        padding: 0 0 0 5px;
+        outline: 0;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        width: 130px;
+    }
+    input:focus {
+        border: 0;
+        padding: 0;
+        @include box-shadow(none);
+    }
+    input::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+    badges ul {
+        padding-left: 0;
+    }
+    .tag {
+        border-radius: 4px;
+        background-color: $btn-primary-bg;
+        color: white;
+        cursor: pointer;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        line-height: 15px;
+        padding: 6px 13px 8px 19px;
+        position: relative;
+        vertical-align: middle;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        -webkit-transition: 0.14s linear;
+        -moz-transition: 0.14s linear;
+        -o-transition: 0.14s linear;
+        transition: 0.14s linear;
+        -webkit-backface-visibility: hidden;
+    }
+    .tag:hover {
+        background-color: $btn-default-bg;
+        color: #ffffff;
+        padding-left: 12px;
+        padding-right: 20px;
+    }
+    .tag:hover .tagsinput-remove-link {
+        color: #ffffff;
+        opacity: 1;
+        display: block\9;
+    }
+    .tagsinput-remove-link {
+        color: white;
+    }
+}
