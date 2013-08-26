@@ -31,12 +31,16 @@ module.exports = function(grunt) {
     delta: {
       html: {
         files: ['template/**/*.html'],
-        tasks: ['html2js', 'karma:watch:run']
+        tasks: ['html2js', 'build', 'karma:watch:run']
       },
       js: {
         files: ['src/**/*.js'],
         //we don't need to jshint here, it slows down everything else
         tasks: ['karma:watch:run', 'build']
+      },
+      scss: {
+        files: ['sass/**/*.scss'],
+        tasks: ['copy:sass']
       }
     },
     concat: {

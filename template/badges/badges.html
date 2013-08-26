@@ -1,4 +1,12 @@
-<span class="tag" data-ng-repeat="badge in badgeList">
-  <span>{{badge}}</span>
-  <a class="tagsinput-remove-link" ng-show="!simple" ng-click="remove($index)"> <i class="icon-remove" ></i></a>
-</span>
+<div class="tagsinput tagsinput-primary fitcontent form-control">
+	<span class="tag" data-ng-repeat="badge in badgeList">
+	  <span>{{badge}}</span>
+	  <a class="tagsinput-remove-link" ng-show="!simple" ng-click="remove($index)"> <i class="icon-remove" ></i></a>
+	</span>
+	<div class="tagsinput-add-container">
+		<div class="tagsinput-add" ng-click="focusInput()">
+			<i class="icon-plus"></i>
+		</div>
+		<input class="input-sm" type='text' autogrow name="badgeListCmpl" ng-model="badgeListCmpl" ui-keydown="{'enter': 'badgeList.push(badgeListCmpl)'}" />
+	</div>
+</div>

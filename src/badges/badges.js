@@ -24,6 +24,20 @@ angular.module('gepsens.badges', [])
             }
           }
         }, true);
+        $scope.focusInput = function() {
+          element.find('input').focus();
+        };
+      }
+    };
+  })
+  .directive('list-feed', function() {
+    return {
+      restrict: 'A',
+      scope: {
+        listFeed: '='
+      },
+      link: function($scope, element, attrs, ctrl) {
+        
       }
     };
   });
