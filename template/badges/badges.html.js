@@ -9,7 +9,7 @@ angular.module("template/badges/badges.html", []).run(["$templateCache", functio
     "		<div class=\"tagsinput-add\" ng-click=\"focusInput()\">\n" +
     "			<i class=\"icon-plus\"></i>\n" +
     "		</div>\n" +
-    "		<input class=\"input-sm\" type='text' autogrow name=\"badgeListCmpl\" ng-model=\"badgeListCmpl\" ui-keydown=\"{'enter': 'badgeList.push(badgeListCmpl)'}\" />\n" +
+    "		<input class=\"input-sm\" type='text' autogrow name=\"badgeListCmpl\" ng-model=\"badgeListCmpl\" ui-keydown=\"{'enter': 'validateAndPush(badgeList,badgeListCmpl)'}\" />\n" +
     "	</div>\n" +
     "</div>");
 }]);

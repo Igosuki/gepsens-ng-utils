@@ -154,6 +154,11 @@ angular.module('gepsens.badges', [])
         $scope.focusInput = function() {
           element.find('input').focus();
         };
+        $scope.validateAndPush = function(list, item) {
+          if(item && item !== '' && list.indexOf(item) < 0) {
+            list.push(item);
+          }
+        }
       }
     };
   })
@@ -235,7 +240,7 @@ angular.module("template/badges/badges.html", []).run(["$templateCache", functio
     "		<div class=\"tagsinput-add\" ng-click=\"focusInput()\">\n" +
     "			<i class=\"icon-plus\"></i>\n" +
     "		</div>\n" +
-    "		<input class=\"input-sm\" type='text' autogrow name=\"badgeListCmpl\" ng-model=\"badgeListCmpl\" ui-keydown=\"{'enter': 'badgeList.push(badgeListCmpl)'}\" />\n" +
+    "		<input class=\"input-sm\" type='text' autogrow name=\"badgeListCmpl\" ng-model=\"badgeListCmpl\" ui-keydown=\"{'enter': 'validateAndPush(badgeList,badgeListCmpl)'}\" />\n" +
     "	</div>\n" +
     "</div>");
 }]);

@@ -7,6 +7,6 @@
 		<div class="tagsinput-add" ng-click="focusInput()">
 			<i class="icon-plus"></i>
 		</div>
-		<input class="input-sm" type='text' autogrow name="badgeListCmpl" ng-model="badgeListCmpl" ui-keydown="{'enter': 'badgeList.push(badgeListCmpl)'}" />
+		<input class="input-sm" type='text' autogrow name="badgeListCmpl" ng-model="badgeListCmpl" ui-keydown="{'enter': 'validateAndPush(badgeList,badgeListCmpl)'}" />
 	</div>
 </div>
