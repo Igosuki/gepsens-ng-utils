@@ -5,17 +5,19 @@ angular.module('gepsens.checkbox', [])
 			value : "="
 		},
 		template: 
-			'<label class="checkbox" ng-class="{true: \'checked\'}[value]">'+
-				'<span class="icons">'+
-					'<span ng-class="{true: \'icon-unchecked first-icon\', false: \'icon-check second-icon\'}[value]"></span>'+
+			'<span class="checkbox" ng-class="{true: \'checked\'}[value]">'+
+				'<span class="icons" ng-click="value = !value">'+
+					'<span class="icon-unchecked first-icon"></span>'+
+					'<span class="icon-check second-icon"></span>'+
 				'</span>'+
-				'<input type="checkbox" ng-model="value" />'+
-			'</label>',
+				'<input type="checkbox" data-toggle="checkbox" ng-model="value" />'+
+				'<span style="width: 100%;" ng-transclude></span>'+
+			'</span>',
 		replace: true,
 		transclude: true,
 		restrict: 'E',
 		link: function($scope, iElm, iAttrs, controller) {
-			if($scope.value == undefined) {
+			if($scope.value === undefined) {
 				$scope.value = false;
 			}
 		}

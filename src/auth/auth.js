@@ -11,7 +11,6 @@ angular.module('gepsens.auth', ['ngCookies', 'ngResource'])
         });
         var userResource = $resource('users/:id');
         var resolveUser = function(result, callback) {
-            console.log("User resolved %s", JSON.stringify(result));
             service.currentUser = result;
             service.currentUser.isLoggedIn = true;
             if(callback) {

@@ -1,4 +1,4 @@
-angular.module("gepsens", ["gepsens.tpls", "gepsens.auth","gepsens.autogrow","gepsens.badges","gepsens.checkbox","gepsens.feedback","gepsens.tracker"]);
+angular.module("gepsens", ["gepsens.tpls", "gepsens.auth","gepsens.autogrow","gepsens.badges","gepsens.checkbox","gepsens.feedback","gepsens.paginate","gepsens.tracker"]);
 angular.module("gepsens.tpls", ["template/badges/badges.html"]);
 angular.module('gepsens.auth', ['ngCookies', 'ngResource'])
   .provider('Auth', function() {
@@ -13,7 +13,6 @@ angular.module('gepsens.auth', ['ngCookies', 'ngResource'])
         });
         var userResource = $resource('users/:id');
         var resolveUser = function(result, callback) {
-            console.log("User resolved %s", JSON.stringify(result));
             service.currentUser = result;
             service.currentUser.isLoggedIn = true;
             if(callback) {
@@ -176,17 +175,19 @@ angular.module('gepsens.checkbox', [])
 			value : "="
 		},
 		template: 
-			'<label class="checkbox" ng-class="{true: \'checked\'}[value]">'+
-				'<span class="icons">'+
-					'<span ng-class="{true: \'icon-unchecked first-icon\', false: \'icon-check second-icon\'}[value]"></span>'+
+			'<span class="checkbox" ng-class="{true: \'checked\'}[value]">'+
+				'<span class="icons" ng-click="value = !value">'+
+					'<span class="icon-unchecked first-icon"></span>'+
+					'<span class="icon-check second-icon"></span>'+
 				'</span>'+
-				'<input type="checkbox" ng-model="value" />'+
-			'</label>',
+				'<input type="checkbox" data-toggle="checkbox" ng-model="value" />'+
+				'<span style="width: 100%;" ng-transclude></span>'+
+			'</span>',
 		replace: true,
 		transclude: true,
 		restrict: 'E',
 		link: function($scope, iElm, iAttrs, controller) {
-			if($scope.value == undefined) {
+			if($scope.value === undefined) {
 				$scope.value = false;
 			}
 		}
@@ -205,6 +206,13 @@ angular.module('gepsens.feedback', [])
 		link: function($scope, iElm, iAttrs, controller) {	
 		}
 	};
+}]);
+angular.module("gepsens.paginate", []).filter('paginate', ['$filter', function ($filter) {
+   return function(input, current_page, page_size) {
+      if (input) {
+          return $filter('limitTo')(input.slice(current_page * page_size), page_size);
+      }
+   };
 }]);
 angular.module('gepsens.tracker', [])
 	.factory('httpRequestTracker', ['$http', function($http){
