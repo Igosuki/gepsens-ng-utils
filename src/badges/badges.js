@@ -28,7 +28,7 @@ angular.module('gepsens.badges', [])
           element.find('input').focus();
         };
         $scope.validateAndPush = function(list, item) {
-          if(item && item !== '' && list.indexOf(item) < 0) {
+          if(item && item !== '' && list && list.indexOf(item) < 0) {
             list.push(item);
           }
         }
