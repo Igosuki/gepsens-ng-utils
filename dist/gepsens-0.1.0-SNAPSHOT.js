@@ -214,7 +214,9 @@ angular.module('gepsens.feedback', [])
 			      btnFeedback = 'doing';
 			    }).on('done', function(response) {
 			      btnFeedback = 'done';
-			    });
+			    }).on('error', function(response) {
+			      btnFeedback = 'error';
+			    });;
 			}
 		}
 	};
