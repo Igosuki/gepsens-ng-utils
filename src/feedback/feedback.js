@@ -5,7 +5,7 @@ angular.module('gepsens.feedback', [])
 			btnFeedback : "=",
 			tracker: "@"
 		},
-		template: "<button ng-transclude ng-class=\"{'error': 'btn-danger', 'done': 'btn-success icon-ok', 'doing': 'icon-spinner icon-spin'}[btnFeedback]\"></button>",
+		template: "<button ng-transclude ng-class=\"{'error': 'btn-danger icon-meh', 'done': 'btn-success icon-ok', 'doing': 'icon-spinner icon-spin'}[btnFeedback]\"></button>",
 		replace: true,
 		transclude: true,
 		restrict: 'A',

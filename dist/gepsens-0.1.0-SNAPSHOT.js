@@ -2,7 +2,7 @@ angular.module("gepsens", ["gepsens.auth","gepsens.autogrow","gepsens.badges","g
 angular.module('gepsens.auth', ['ngCookies', 'ngResource'])
   .provider('Auth', function() {
 
-    this.$get = function ($http, $resource, $cookieStore, $q, $window, $cookies) {
+    this.$get = function ($http, $resource, $cookieStore, $q, $window, $cookies, $location) {
         var authResource = $resource('auth/:provider', {
 
         }, {
@@ -50,7 +50,7 @@ angular.module('gepsens.auth', ['ngCookies', 'ngResource'])
                 if(type.trim() === '') {
                     return service.authenticate(callback);
                 } else {
-                    window.location.href = 'auth/' + type;
+                    window.location.href = 'auth/' + type + '?callback='+window.location.href;
                 }
             },
             users: function() {
@@ -204,7 +204,7 @@ angular.module('gepsens.feedback', [])
 			btnFeedback : "=",
 			tracker: "@"
 		},
-		template: "<button ng-transclude ng-class=\"{'error': 'btn-danger', 'done': 'btn-success icon-ok', 'doing': 'icon-spinner icon-spin'}[btnFeedback]\"></button>",
+		template: "<button ng-transclude ng-class=\"{'error': 'btn-danger icon-meh', 'done': 'btn-success icon-ok', 'doing': 'icon-spinner icon-spin'}[btnFeedback]\"></button>",
 		replace: true,
 		transclude: true,
 		restrict: 'A',

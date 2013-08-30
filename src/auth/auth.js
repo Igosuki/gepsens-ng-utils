@@ -1,7 +1,7 @@
 angular.module('gepsens.auth', ['ngCookies', 'ngResource'])
   .provider('Auth', function() {
 
-    this.$get = function ($http, $resource, $cookieStore, $q, $window, $cookies) {
+    this.$get = function ($http, $resource, $cookieStore, $q, $window, $cookies, $location) {
         var authResource = $resource('auth/:provider', {
 
         }, {
@@ -49,7 +49,7 @@ angular.module('gepsens.auth', ['ngCookies', 'ngResource'])
                 if(type.trim() === '') {
                     return service.authenticate(callback);
                 } else {
-                    window.location.href = 'auth/' + type;
+                    window.location.href = 'auth/' + type + '?callback='+window.location.href;
                 }
             },
             users: function() {
