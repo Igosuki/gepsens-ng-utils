@@ -9,15 +9,16 @@ angular.module('gepsens.feedback', [])
 		replace: true,
 		transclude: true,
 		restrict: 'A',
+		
 		link: function($scope, iElm, iAttrs, controller) {	
 			if($scope.tracker) {
 				promiseTracker($scope.tracker).on('start', function() {
-			      btnFeedback = 'doing';
-			    }).on('done', function(response) {
-			      btnFeedback = 'done';
-			    }).on('error', function(response) {
-			      btnFeedback = 'error';
-			    });;
+					btnFeedback = 'doing';
+				}).on('done', function(response) {
+					btnFeedback = 'done';
+				}).on('error', function(response) {
+					btnFeedback = 'error';
+				});
 			}
 		}
 	};

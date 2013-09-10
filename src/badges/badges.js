@@ -31,7 +31,7 @@ angular.module('gepsens.badges', [])
           if(item && item !== '' && list && list.indexOf(item) < 0) {
             list.push(item);
           }
-        }
+        };
       }
     };
   })

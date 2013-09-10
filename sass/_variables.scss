@@ -1,0 +1,18 @@
+
+$gray-dark: lighten(#000, 20%) !default;   // #333
+$gray-light: lighten(#000, 60%) !default;   // #999
+$brand-primary: #428bca !default;
+
+$text-color: $gray-dark;
+$base: $gray-dark;
+$baseFontSize: 14px !default;
+$rwdContainerSpace: 20px;
+$firm: $brand-primary;
+
+$lightgray: $gray-light;
+$inverse:   white;
+
+$success:   #2ecc71;
+$danger:    #e74c3c;
+$warning:   #f1c40f;
+$info:      #3498db;
