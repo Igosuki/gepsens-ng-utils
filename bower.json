@@ -2,6 +2,9 @@
   "name": "gepsens-utils",
   "version": "0.0.1",
   "main": "./gepsens.js",
+  "dependencies": {
+    "angular-promise-tracker": "latest"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
